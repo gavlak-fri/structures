@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CA3704D9-B3A6-41B2-9143-2743B68196D6}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>DataStructures</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+      <EntryPointSymbol>Main</EntryPointSymbol>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+      <EntryPointSymbol>Main</EntryPointSymbol>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+      <EntryPointSymbol>Main</EntryPointSymbol>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+      <EntryPointSymbol>Main</EntryPointSymbol>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="formMain.cpp" />
+    <ClCompile Include="GUI\formData.cpp" />
+    <ClCompile Include="GUI\Logger.cpp" />
+    <ClCompile Include="GUI\panelArray.cpp" />
+    <ClCompile Include="GUI\panelList.cpp" />
+    <ClCompile Include="GUI\panelGraph.cpp" />
+    <ClCompile Include="GUI\panelPriorityQueue.cpp" />
+    <ClCompile Include="GUI\panelQueue.cpp" />
+    <ClCompile Include="GUI\panelSort.cpp" />
+    <ClCompile Include="GUI\panelStack.cpp" />
+    <ClCompile Include="GUI\panelStructures.cpp" />
+    <ClCompile Include="GUI\panelTable.cpp" />
+    <ClCompile Include="GUI\panelTree.cpp" />
+    <ClCompile Include="GUI\panelVector.cpp" />
+    <ClCompile Include="GUI\Routines.cpp" />
+    <ClCompile Include="GUI\UserData.cpp" />
+    <ClCompile Include="Structures\DSRoutines.cpp" />
+    <ClCompile Include="Structures\Structure.cpp" />
+    <ClCompile Include="Structures\StructuresFactory.cpp" />
+    <ClCompile Include="Structures\Vector.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="formMain.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="GUI\formData.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="GUI\Logger.h" />
+    <ClInclude Include="GUI\panelArray.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="GUI\panelList.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="GUI\panelGraph.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="GUI\panelPriorityQueue.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="GUI\panelQueue.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="GUI\panelSort.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="GUI\panelStack.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="GUI\PanelStructure.h" />
+    <ClInclude Include="GUI\panelStructures.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="GUI\panelTable.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="GUI\panelTree.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="GUI\panelVector.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="GUI\Routines.h" />
+    <ClInclude Include="GUI\UserData.h" />
+    <ClInclude Include="Structures\Iterator.h" />
+    <ClInclude Include="Structures\StructureItem.h" />
+    <ClInclude Include="Structures\DSRoutines.h" />
+    <ClInclude Include="Structures\Structure.h" />
+    <ClInclude Include="Structures\StructureID.h" />
+    <ClInclude Include="Structures\StructuresFactory.h" />
+    <ClInclude Include="Structures\Vector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GUI\formData.resx">
+      <DependentUpon>GUI\formData.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formMain.resx">
+      <DependentUpon>formMain.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\panelGraph.resx">
+      <DependentUpon>GUI\panelGraph.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\panelPriorityQueue.resx">
+      <DependentUpon>GUI\panelPriorityQueue.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\panelQueue.resx">
+      <DependentUpon>GUI\panelQueue.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\panelStack.resx">
+      <DependentUpon>GUI\panelStack.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\panelStructures.resx">
+      <DependentUpon>GUI\panelStructures.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\panelTable.resx">
+      <DependentUpon>GUI\panelTable.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\panelTree.resx">
+      <DependentUpon>GUI\panelTree.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\panelVector.resx">
+      <DependentUpon>GUI\panelVector.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\panelArray.resx">
+      <DependentUpon>GUI\panelArray.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\panelList.resx">
+      <DependentUpon>GUI\panelList.h</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
