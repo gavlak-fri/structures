@@ -1,26 +1,44 @@
 #include "Vector.h"
 #include "stdlib.h"
+#include "string.h"
 
 using namespace DS;
 
 Vector::Vector(size_t size)
 {
-	sp = malloc(size);
+	size_ = size;
+	memory_ = calloc(size, 1);
 }
+
+// Vector::Vector(size_t size) :
+//	 size_(size),
+//	 memory_(calloc(size, 1))
+// {
+// }
 
 Vector::Vector(const Vector& other) 
 {
-	other.clone()
+	size_ = other.size_;
+	memory_ = calloc(size_, 1);
+
+	memcpy(memory_, other.memory_, size_);
 }
+
+// Vector::Vector(const Vector& other) :
+//	 Vector(other.size_)
+// {
+//	 memcpy(memory_, other.memory_, size_);
+// }
 
 Vector::~Vector()
 {
-	free(sp);
+	free(memory_);
 }
 
 Structure* Vector::clone() const
 {
-	throw -1;
+	Vector* clone = new Vector(*this);
+	return clone;
 }
 
 Structure & Vector::operator=(const Structure & other)
@@ -30,12 +48,16 @@ Structure & Vector::operator=(const Structure & other)
 
 Vector& Vector::operator=(const Vector& other)
 {
-	throw -1;
+	if (this != &other) {
+		size_ = other.size_;
+		memory_ = realloc(memory_, size_);
+		memcpy(memory_, other.memory_, size_);
+	}
 }
 
 bool Vector::operator==(const Vector& other) const
 {
-	throw -1;
+	return size_ == other.size_ && memcmp(memory_, other.memory_, size_) == 0;
 }
 
 size_t Vector::size() const

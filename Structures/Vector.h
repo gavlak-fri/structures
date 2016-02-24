@@ -9,7 +9,6 @@ namespace DS {
 	{
 		template<typename T> friend class DS::Array;
 	public:
-		void *sp;
 		Vector(size_t size);
 		Vector(const Vector& other);
 		~Vector();
@@ -37,7 +36,8 @@ namespace DS {
 		byte* getByteAddress(const int index);
 
 	private:
-		// atributy
+		void *memory_;
+		size_t size_;
 	};
 
 }
