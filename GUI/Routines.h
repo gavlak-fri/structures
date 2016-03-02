@@ -48,8 +48,9 @@ namespace UI {
 		static std::string convertStructureADSToStr(const DS::StructureADS ads);
 		static std::string convertLogTypeToStr(const DS::LogType lt);
 		static std::string convertIntToStr(int i);
+		static System::String^ convertMemoryToString(const void* ptr, const int bytes);
 		static System::String^ convertIntToString(int i);
-		static System::String^ convertStrToString(std::string s);
+		static System::String^ convertStrToString(std::string s);		
 
 	private:
 		Routines();

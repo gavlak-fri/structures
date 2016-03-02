@@ -242,6 +242,19 @@ string Routines::convertIntToStr(int i)
 	return std::to_string(i);
 }
 
+System::String ^ UI::Routines::convertMemoryToString(const void * ptr, const int bytes)
+{
+	String^ result = "";
+	for (int iB = 0; iB < bytes; iB++) 
+	{
+		const byte B = *(reinterpret_cast<const byte*>(ptr) + iB);
+		for (int ib = 0; ib < 8; ib++)
+			result += (B >> ib) & 1 ? "1" : "0";
+		result += " ";
+	}
+	return result;
+}
+
 System::String ^ UI::Routines::convertIntToString(int i)
 {
 	return  Routines::convertStrToString(Routines::convertIntToStr(i));
