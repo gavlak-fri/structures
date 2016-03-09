@@ -37,6 +37,7 @@ namespace UI {
 
 	private:
 		PanelStructureUpdater^ updater_;
+		ListViewManager^ lviewManager_;
 
 		void refreshItem(System::Windows::Forms::ListViewItem^ item);
 		void editItem(System::Windows::Forms::ListViewItem^ item);

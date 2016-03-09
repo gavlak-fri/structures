@@ -2,113 +2,11 @@
 #include <sstream>
 
 using namespace System;
-using namespace System::Windows::Forms;
 using namespace System::Drawing;
+using namespace System::Windows::Forms;
 using namespace DS;
 using namespace UI;
 using namespace std;
-
-void Routines::listViewItemSelect(System::Windows::Forms::ListViewItem ^ &item)
-{
-	item->Selected = true;
-}
-
-void Routines::listViewItemDeselect(System::Windows::Forms::ListViewItem ^ &item)
-{
-	item->Selected = false;
-}
-
-void Routines::listViewItemRemove(System::Windows::Forms::ListViewItem ^ &item)
-{
-	item->ListView->Items->Remove(item);
-	item = nullptr;
-}
-
-ListViewItem ^ Routines::listViewAddItem(ListView ^ lview, System::String ^ text, bool selectAdded)
-{
-	listViewDeselect(lview);
-	ListViewItem^ item = (gcnew ListViewItem(text));
-	lview->Items->Add(item);
-	if (selectAdded)
-		listViewItemSelect(item);
-	return item;
-}
-
-ListViewItem ^ Routines::listViewAddItem(ListView ^ lview, string text, bool selectAdded)
-{
-	return Routines::listViewAddItem(lview, Routines::convertStrToString(text), selectAdded);
-}
-
-System::Windows::Forms::ListViewItem ^ UI::Routines::listViewInsertItem(ListView ^ lview, int index, string text, bool selectAdded)
-{
-	listViewDeselect(lview);
-	ListViewItem^ item = (gcnew ListViewItem(Routines::convertStrToString(text)));
-	lview->Items->Insert(index, item);
-	if (selectAdded)
-		listViewItemSelect(item);
-	return item;
-}
-
-void Routines::listViewRemoveSelected(ListView ^ lview)
-{
-	listViewProcessSelection(lview, listViewItemRemove);
-}
-
-void Routines::listViewDeselect(ListView ^ lview)
-{
-	listViewProcessSelection(lview, listViewItemDeselect);
-}
-
-void Routines::listViewProcessItems(System::Windows::Forms::ListView ^ lview, eventListViewItem event)
-{
-	int i = 0;
-
-	while (i < lview->Items->Count)
-	{
-		ListViewItem^ item = lview->Items[i];
-		event(item);
-		// item mohla byt vymazana
-		if (item != nullptr)
-			i++;
-	}
-}
-
-void Routines::listViewProcessSelection(System::Windows::Forms::ListView ^ lview, eventListViewItem event)
-{
-	int i = 0;
-	int count = lview->Items->Count;
-	while (i < count)
-	{
-		ListViewItem^ item = lview->Items[i];
-		event(item);
-		// item mohla byt vymazana alebo deselectnuta
-		if (item != nullptr && count == lview->Items->Count)
-			i++;
-		else
-			count = lview->Items->Count;
-	}
-}
-
-void UI::Routines::listViewFill(System::Windows::Forms::ListView ^ lview, DS::Iterable<UserData::DataType>* structure)
-{
-	if (lview != nullptr)
-	{
-		lview->Items->Clear();
-		if (structure != nullptr)
-		{
-			int i = 0;
-			for (auto data : *structure)
-			{
-				ListViewItem^ item = Routines::listViewAddItem(lview, Routines::convertIntToStr(i), true);
-				if (item->SubItems->Count < 2)
-					item->SubItems->Add("");
-				item->SubItems[1]->Text = UserData::convertDataToStr(data);
-
-				i++;
-			}
-		}
-	}
-}
 
 void Routines::layoutControlToCenter(Control^ control, Rectangle^ rect, int offsetLeft, int offsetTop)
 {

@@ -12,6 +12,7 @@ namespace UI
 
 		static void finalize();
 		static DataType defaultDataValue();
+		static DataType randomDataValue();
 		static System::String^ convertDataToStr(const DataType& data);
 		static bool areEqual(const DataType& a, const DataType& b);
 

@@ -57,7 +57,8 @@ namespace UI {
 	private:  
 		System::ComponentModel::Container ^components;
 
-		PanelStructure ^pnlCustomStructure_;
+		PanelStructure^ pnlCustomStructure_;
+		ListViewManager^ lviewManager_;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>

@@ -3,6 +3,7 @@
 #include "GUI/Routines.h"
 #include "Structures/StructuresFactory.h"
 #include "Structures/Vector.h"
+#include "Structures/Array.h"
 #include "GUI/UserData.h"
 
 using namespace System;
@@ -12,8 +13,8 @@ using namespace UI;
 
 void registerStructures(StructuresFactory* factory)
 {
-	// REGISTROVANIE STRUKTUR!
-	factory->registerPrototype(StructureADS::adsVECTOR, dynamic_cast<Structure*>(new Vector(10)));
+	factory->registerPrototype(StructureADS::adsVECTOR, new Vector(10));
+	factory->registerPrototype(StructureADS::adsARRAY, new DS::Array<UserData::DataType>(200));
 }
 
 [STAThread]
@@ -30,7 +31,8 @@ void Main(array<String^>^ args)
 }
 
 FormMain::FormMain(void):
-	panels_(gcnew array<PanelStructures^>(StructureADT::adtCount))
+	panels_(gcnew array<PanelStructures^>(StructureADT::adtCount)),
+	lviewManager(gcnew ListViewManager(lviewLog))
 {
 	InitializeComponent();
 
@@ -42,7 +44,7 @@ FormMain::FormMain(void):
 
 void FormMain::Log(LogType lt, System::String ^ message)
 {
-	System::Windows::Forms::ListViewItem ^ item = Routines::listViewAddItem(lviewLog, Routines::convertLogTypeToStr(lt), false);
+	System::Windows::Forms::ListViewItem ^ item = lviewManager->addItem(Routines::convertLogTypeToStr(lt), false, nullptr);
 	item->SubItems->Add(message);
 }
 

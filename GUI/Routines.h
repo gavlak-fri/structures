@@ -8,33 +8,9 @@
 
 namespace UI {
 
-	typedef void(*eventListViewItem)(System::Windows::Forms::ListViewItem ^&);
-
 	ref class Routines
 	{
 	public:
-		static void listViewItemSelect(System::Windows::Forms::ListViewItem^ &item);
-		static void listViewItemDeselect(System::Windows::Forms::ListViewItem^ &item);
-		static void listViewItemRemove(System::Windows::Forms::ListViewItem^ &item);
-
-		static System::Windows::Forms::ListViewItem^ listViewAddItem(System::Windows::Forms::ListView^ lview,
-			System::String^ text,
-			bool selectAdded);
-		static System::Windows::Forms::ListViewItem^ listViewAddItem(System::Windows::Forms::ListView^ lview,
-			std::string text,
-			bool selectAdded);
-		static System::Windows::Forms::ListViewItem^ listViewInsertItem(System::Windows::Forms::ListView^ lview,
-			int index,
-			std::string text,
-			bool selectAdded);
-		static void listViewRemoveSelected(System::Windows::Forms::ListView^ lview);
-		static void listViewDeselect(System::Windows::Forms::ListView^  lview);
-
-		static void listViewProcessItems(System::Windows::Forms::ListView^  lview, eventListViewItem event);
-		static void listViewProcessSelection(System::Windows::Forms::ListView^  lview, eventListViewItem event);
-
-		static void listViewFill(System::Windows::Forms::ListView^ lview, DS::Iterable<UserData::DataType>* structure);
-
 		static void layoutControlToCenter(System::Windows::Forms::Control^ control,
 			System::Drawing::Rectangle^ rect,
 			int offsetLeft,

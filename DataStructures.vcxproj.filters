@@ -87,6 +87,9 @@
     <ClCompile Include="GUI\formData.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="GUI\PanelStructure.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Structures\Structure.h">
@@ -159,6 +162,15 @@
       <Filter>Header Files\DS</Filter>
     </ClInclude>
     <ClInclude Include="Structures\Iterator.h">
+      <Filter>Header Files\DS</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\Array.h">
+      <Filter>Header Files\DS</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\ArrayList.h">
+      <Filter>Header Files\DS</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\List.h">
       <Filter>Header Files\DS</Filter>
     </ClInclude>
   </ItemGroup>

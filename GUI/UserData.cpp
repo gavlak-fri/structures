@@ -1,19 +1,23 @@
 #include "UserData.h"
 #include <sstream>
 
+using namespace UI;
 
-void UI::UserData::finalize()
+void UserData::finalize()
 {
 }
 
-UI::UserData::DataType UI::UserData::defaultDataValue()
+UserData::DataType UserData::defaultDataValue()
 {
-	/*int* pom = new int;
-	*pom = rand() % 1000;*/
+	return 0;
+}
+
+UserData::DataType UI::UserData::randomDataValue()
+{
 	return rand() % 1000;
 }
 
-System::String ^ UI::UserData::convertDataToStr(const DataType& data)
+System::String ^ UserData::convertDataToStr(const DataType& data)
 {
 	std::stringstream ss;
 	/*if (data == nullptr)
@@ -27,41 +31,41 @@ System::String ^ UI::UserData::convertDataToStr(const DataType& data)
 	return gcnew System::String(ss.str().c_str());
 }
 
-bool UI::UserData::areEqual(const DataType & a, const DataType & b)
+bool UserData::areEqual(const DataType & a, const DataType & b)
 {
 	return a == b;
 }
 
-UI::UserData::PriorityType UI::UserData::defaultPriorityValue()
+UserData::PriorityType UserData::defaultPriorityValue()
 {
 	return rand() % 1000;
 }
 
-System::String ^ UI::UserData::convertPriorityToStr(const PriorityType& priority)
+System::String ^ UserData::convertPriorityToStr(const PriorityType& priority)
 {
 	std::stringstream ss;
 	ss << priority;
 	return gcnew System::String(ss.str().c_str());
 }
 
-int UI::UserData::comparePriorities(const PriorityType& a, const PriorityType& b)
+int UserData::comparePriorities(const PriorityType& a, const PriorityType& b)
 {
 	return b - a;
 }
 
-UI::UserData::KeyType UI::UserData::defaultKeyValue()
+UserData::KeyType UserData::defaultKeyValue()
 {
 	return rand() % 1000;
 }
 
-System::String ^ UI::UserData::convertKeyToStr(const KeyType& key)
+System::String ^ UserData::convertKeyToStr(const KeyType& key)
 {
 	std::stringstream ss;
 	ss << key;
 	return gcnew System::String(ss.str().c_str());
 }
 
-int UI::UserData::compareKeys(const KeyType& a, const KeyType& b)
+int UserData::compareKeys(const KeyType& a, const KeyType& b)
 {
 	return a - b;
 }

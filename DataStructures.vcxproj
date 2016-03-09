@@ -149,6 +149,7 @@
     <ClCompile Include="GUI\panelQueue.cpp" />
     <ClCompile Include="GUI\panelSort.cpp" />
     <ClCompile Include="GUI\panelStack.cpp" />
+    <ClCompile Include="GUI\PanelStructure.cpp" />
     <ClCompile Include="GUI\panelStructures.cpp" />
     <ClCompile Include="GUI\panelTable.cpp" />
     <ClCompile Include="GUI\panelTree.cpp" />
@@ -204,7 +205,10 @@
     </ClInclude>
     <ClInclude Include="GUI\Routines.h" />
     <ClInclude Include="GUI\UserData.h" />
+    <ClInclude Include="Structures\Array.h" />
+    <ClInclude Include="Structures\ArrayList.h" />
     <ClInclude Include="Structures\Iterator.h" />
+    <ClInclude Include="Structures\List.h" />
     <ClInclude Include="Structures\StructureItem.h" />
     <ClInclude Include="Structures\DSRoutines.h" />
     <ClInclude Include="Structures\Structure.h" />

@@ -34,6 +34,7 @@ namespace UI {
 	private:
 		System::Windows::Forms::ListViewItem^ selectedItem_;
 		PanelStructureUpdater^ updater_;
+		ListViewManager^ lviewManager_;
 		
 		void checkBoxesToItem(System::Windows::Forms::ListViewItem^ item);
 		void bitsToItem(System::Windows::Forms::ListViewItem^ item);

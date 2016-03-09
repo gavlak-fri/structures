@@ -2,6 +2,7 @@
 
 #include "Structures/StructureID.h"
 #include "GUI/panelStructures.h"
+#include "GUI/PanelStructure.h"
 #include "GUI/Logger.h"
 
 	using namespace System;
@@ -35,22 +36,12 @@
 	private: System::Windows::Forms::TabPage^  tabTable;
 	private: System::Windows::Forms::TabPage^  tabSorting;
 
-		private:
-			array<UI::PanelStructures^>^ panels_;
+	private:
+		array<UI::PanelStructures^>^ panels_;
+		UI::ListViewManager^ lviewManager;
 			
-			void initializePanel(const DS::StructureADT adt);
-			System::Windows::Forms::TabPage^ getTabFromStructureADT(const DS::StructureADT adt);
-
-
-
-
-
-
-
-
-
-
-
+		void initializePanel(const DS::StructureADT adt);
+		System::Windows::Forms::TabPage^ getTabFromStructureADT(const DS::StructureADT adt);
 
 	private: System::ComponentModel::IContainer^  components;
 

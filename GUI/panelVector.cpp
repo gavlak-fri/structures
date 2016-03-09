@@ -20,6 +20,8 @@ PanelVector::PanelVector(void):
 	this->checkboxes_[5] = this->chbBit5;
 	this->checkboxes_[6] = this->chbBit6;
 	this->checkboxes_[7] = this->chbBit7;
+
+	lviewManager_ = gcnew ListViewManager(lviewVector);
 }
 
 void PanelVector::initialize(Structure * structure)
@@ -27,7 +29,7 @@ void PanelVector::initialize(Structure * structure)
 	vector_ = dynamic_cast<Vector*>(structure);
 	for (int i = 0; (size_t)i < vector_->size(); i++)
 	{
-		ListViewItem^ item = Routines::listViewAddItem(lviewVector,Routines::convertIntToStr((*vector_)[i]),false);
+		ListViewItem^ item = lviewManager_->addItem(Routines::convertIntToStr((*vector_)[i]), false, nullptr);
 		refreshItem(item);
 	}
 

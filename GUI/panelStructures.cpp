@@ -20,6 +20,7 @@ PanelStructures::PanelStructures(void) :
 	initialized_(false)
 {
 	InitializeComponent();
+	lviewManager_ = gcnew ListViewManager(lviewStructures);
 }
 
 void PanelStructures::initialize(const StructureADT adt)
@@ -105,11 +106,11 @@ System::Void PanelStructures::btnNew_Click(System::Object ^ sender, System::Even
 {
 	Structure* structure = StructuresFactory::getFactory()->createStructure(adt_->getADSContainerByIndex(cbxADS->SelectedIndex)->getADSType());
 
-	System::Windows::Forms::ListViewItem^ item = Routines::listViewAddItem(
-		lviewStructures, 
+	System::Windows::Forms::ListViewItem^ item = lviewManager_->addItem(
 		Routines::convertStructureADSToStr(adt_->getADSContainerByIndex(cbxADS->SelectedIndex)->getADSType()) +
 			Routines::convertIntToStr(adt_->getADSContainerByIndex(cbxADS->SelectedIndex)->totalCreated()),
-		true);
+		true,
+		nullptr);
 
 	updateControls();
 }
@@ -134,11 +135,11 @@ System::Void PanelStructures::btnClone_Click(System::Object ^ sender, System::Ev
 	Structure* structure = StructuresFactory::getFactory()->createStructure(adt_->getADSContainerByIndex(cbxADS->SelectedIndex)->getADSType());
 	(*structure) = (*selected);
 
-	System::Windows::Forms::ListViewItem^ item = Routines::listViewAddItem(
-		lviewStructures,
+	System::Windows::Forms::ListViewItem^ item = lviewManager_->addItem(
 		Routines::convertStructureADSToStr(adt_->getADSContainerByIndex(cbxADS->SelectedIndex)->getADSType()) +
 			Routines::convertIntToStr(adt_->getADSContainerByIndex(cbxADS->SelectedIndex)->totalCreated()),
-		true);
+		true,
+		nullptr);
 
 	updateControls();
 }
